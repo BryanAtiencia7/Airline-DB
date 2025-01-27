@@ -22,4 +22,5 @@ jobs:
           DB_USER: ${{ secrets.AWS_RDS_USER }}
           DB_PASSWORD: ${{ secrets.AWS_RDS_PASSWORD }}
         run: |
-          mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD < init.sql
+          mysql -h $DB_HOST -u $DB_USER --password=$DB_PASSWORD < init.sql
+
