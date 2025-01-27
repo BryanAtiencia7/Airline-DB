@@ -1,4 +1,4 @@
-name: Deploy MySQL on AWS RDS
+name: Deploy MySQL on AWS RDS Test 2
 
 on:
   push:
