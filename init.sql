@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS db_aerolinea;
+-- CREATE DATABASE IF NOT EXISTS db_aerolinea;
 USE db_aerolinea;
 
 CREATE TABLE IF NOT EXISTS aerolineas (

@@ -1,0 +1,25 @@
+name: Deploy MySQL on AWS RDS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install MySQL Client
+        run: sudo apt-get install -y mysql-client
+
+      - name: Deploy Database to AWS RDS
+        env:
+          DB_HOST: ${{ secrets.AWS_RDS_HOST }}
+          DB_USER: ${{ secrets.AWS_RDS_USER }}
+          DB_PASSWORD: ${{ secrets.AWS_RDS_PASSWORD }}
+        run: |
+          mysql -h $DB_HOST -u $DB_USER -p$DB_PASSWORD < init.sql
